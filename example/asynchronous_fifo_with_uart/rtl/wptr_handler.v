@@ -6,7 +6,6 @@ module wptr_handler #(parameter PTR_WIDTH = 3, DEPTH = 4)
   output reg [PTR_WIDTH:0] b_wptr, g_wptr,
   output reg full,
   output reg half_full,
-  output reg [$clog2(DEPTH+1)-1:0]write_data_count,
   output reg prog_full,
   output almost_full
 );

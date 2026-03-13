@@ -34,7 +34,7 @@ module async_top #(parameter DEPTH = 8, DATA_WIDTH = 8, PROG_FULL_VALUE = 2, PRO
   sync #(PTR_WIDTH) sync_wptr (rclk, rrst, g_wptr, g_wptr_sync); //write pointer 
   sync #(PTR_WIDTH) sync_rptr (wclk, wrst, g_rptr, g_rptr_sync); //read pointer  
   
-  wptr_handler #(PTR_WIDTH,DEPTH) wptr_h(wclk, wrst, w_en,g_rptr_sync,PROG_FULL_VALUE,b_wptr,g_wptr,full,half_full,write_data_count,prog_full,almost_full);
+  wptr_handler #(PTR_WIDTH,DEPTH) wptr_h(wclk, wrst, w_en,g_rptr_sync,PROG_FULL_VALUE,b_wptr,g_wptr,full,half_full,prog_full,almost_full);
   rptr_handler #(PTR_WIDTH,DEPTH) rptr_h(rclk, rrst, r_en,g_wptr_sync,PROG_EMPTY_VALUE,b_rptr,g_rptr,empty,half_empty,prog_empty,almost_empty);
   memory #(.DATA_WIDTH(DATA_WIDTH),.DEPTH(DEPTH),.PTR_WIDTH(PTR_WIDTH)) mem(rclk,rrst,MODE, wclk,wrst, w_en,r_en, full, empty, b_wptr, b_rptr, data_in,data_out,rd_valid,overflow,underflow,wr_ack,data_count);
 

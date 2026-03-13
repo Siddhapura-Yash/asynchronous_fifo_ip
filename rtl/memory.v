@@ -16,7 +16,8 @@ module memory #(parameter DATA_WIDTH = 8, DEPTH = 8, PTR_WIDTH = 3)
    output reg underflow,
    output reg wr_ack,
    output [PTR_WIDTH:0] data_count);
-  
+   
+    (* ram_style = "block" *)
   reg [DATA_WIDTH - 1 : 0]mem[0 : DEPTH-1]; 
 
   assign data_count = b_wptr - b_rptr;

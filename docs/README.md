@@ -198,7 +198,7 @@ Maximum achievable frequencies:
 | wclk  | 147.601 MHz       |
 | rclk  | 151.95 MHz        |
 
-This configuration provides **~1.5 ns positive timing margin** when operating at **100 MHz**.
+This configuration provides **~3.2 ns positive timing margin** when operating at **100 MHz**.
 
 ---
 
@@ -224,7 +224,8 @@ Maximum achievable frequencies:
 
 This configuration also meets timing requirements with **positive slack at 100 MHz operation**.
 
+---
+
 Clock constraints can be modified using the **Interface Designer / timing constraint settings** in the FPGA tool.
 
----
 
